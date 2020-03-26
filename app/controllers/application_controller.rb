@@ -4,9 +4,9 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit :sign_up, keys: [:email, :password, :passwrd_confirmation, :party, :name, :age, :district_id]
+    devise_parameter_sanitizer.permit :sign_up, keys: [:email, :password, :passwrd_confirmation, :party, :name, :age, :district_id, :image]
     devise_parameter_sanitizer.permit :sign_in, keys: [:phone, :password]
-    devise_parameter_sanitizer.permit :account_update, keys: [:email, :password, :passwrd_confirmation, :party, :name, :age, :district_id]
+    devise_parameter_sanitizer.permit :account_update, keys: [:email, :password, :passwrd_confirmation, :party, :name, :age, :district_id, :image]
   end
 
   def detect_layout
