@@ -2,9 +2,11 @@
   .carousel-control-prev-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%230057B7' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
   }
-
   .carousel-control-next-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%230057B7' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+  }
+  .vote-color {
+    width: 25%; background-color: #0057B7
   }
 </style>
 
@@ -13,13 +15,13 @@
 
     <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active mt-2" data-interval="2000">
+        <div class="carousel-item active mt-2">
           <img src="<%= district.users.first.image.url %>" style="width: 100%;">
-          <button type="submit" class="btn mt-3 btn-success vote-color" style="width: 25%; background-color: #0057B7"><%= district.users.first.name %></button>
+          <button type="submit" class="btn mt-3 btn-success vote-color"><%= district.users.first.name %></button>
         </div>
-        <div class="carousel-item" data-interval="2000">
+        <div class="carousel-item">
           <img src="<%= district.users.second.image.url %>" style="width: 100%;">
-          <button type="submit" class="btn mt-3 btn-success vote-color" style="width: 25%; background-color: #0057B7"><%= district.users.second.name %></button>
+          <button type="submit" class="btn mt-3 btn-success vote-color"><%= district.users.second.name %></button>
         </div>
 
         <!-- <div class="carousel-item">
