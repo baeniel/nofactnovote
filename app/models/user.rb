@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  enum party: ["더불어", "자한당"]
+  enum party: ["더불어민주당", "미래통합당"]
 
   def image_url
     image.url.present? ? image.url(:square) : '/applet-touch-icon.png'
