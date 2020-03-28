@@ -8,9 +8,19 @@
   .vote-color {
     width: 25%; background-color: #0057B7
   }
-  .modal-line {
-    margin-top: 0;
-    margin-bottom: 0;
+  .style-one {
+    margin-top: 0.15rem;
+    margin-bottom: 0.6rem;
+    background-color: white;
+    border: 1px solid;
+  }
+  .small-title {
+    magin-bottom: 0;
+  }
+  #modal-pop {
+    background-color: #696969;
+    opacity: 0.85;
+    border-radius: 25px;
   }
 </style>
 
@@ -29,9 +39,9 @@
         </div>
         <div class="modal fade" id="exampleModalScrollable<%= user.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-scrollable" role="document">
-            <div class="modal-content">
+            <div class="modal-content text-white" id="modal-pop">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalScrollableTitle"><%= user.name %>, <%= user.district.name %></h5>
+                <h5 class="modal-title" id="exampleModalScrollableTitle"><%= user.name %> | <%= user.district.name %></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -45,10 +55,11 @@
                     포스터 사진 흠냐링
                   </div>
                 </div>
-                <p class="mt-4" style="text-left">후보자 공약</p>
-                <hr class="modal-line">
-                <p>도팩첵(도덕성 팩트 체크)</p>
-                <hr class="modal-line">
+                <p class="mt-4 mb-0" style="text-left">후보자 공약</p>
+                <hr class="style-one">
+                <%= user.name %> 후보자 공약집 바로가기
+                <p class="mt-4 mb-0">도팩첵(도덕성 팩트 체크)</p>
+                <hr class="style-one">
                   1. 인성 ~~~~<br>
                   1. 인성 ~~~~<br>
                   1. 인성 ~~~~<br>
