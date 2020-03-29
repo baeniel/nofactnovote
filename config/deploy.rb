@@ -2,7 +2,7 @@
 lock "~> 3.11.2"
 
 set :application, "nofactnovote"
-set :repo_url, "git@github.com:baeniel/no-fact-no-vote.git"
+set :repo_url, "git@github.com:baeniel/nofactnovote.git"
 set :deploy_to, '/home/deploy/nofactnovote'
 
 append :linked_files, "config/database.yml", "config/secrets.yml"
