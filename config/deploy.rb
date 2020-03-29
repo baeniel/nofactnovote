@@ -1,9 +1,9 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.2"
 
-set :application, "no-fact-no-vote"
+set :application, "nofactnovote"
 set :repo_url, "git@github.com:baeniel/no-fact-no-vote.git"
-set :deploy_to, '/home/deploy/no-fact-no-vote'
+set :deploy_to, '/home/deploy/nofactnovote'
 
 append :linked_files, "config/database.yml", "config/secrets.yml"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
