@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
 
-  permit_params :password, :password_confirmation, :party, :name, :age, :district_id, :image
+  permit_params :password, :password_confirmation, :party, :name, :district_id, :image, :policy
 
   index do
     selectable_column
@@ -10,7 +10,7 @@ ActiveAdmin.register User do
       image_tag(user.image_url, class: 'admin-index-image')
     end
     column :party
-    column :age
+    column :policy
     column "district" do |d|
       d.district.name
     end
@@ -22,7 +22,7 @@ ActiveAdmin.register User do
       row :name
       row :image
       row :party
-      row :age
+      row :policy
     end
   end
 
@@ -30,7 +30,7 @@ ActiveAdmin.register User do
     f.inputs do
       f.input :name
       f.input :party
-      f.input :age
+      f.input :policy
       f.input :district
       f.input :image
       f.input :password
