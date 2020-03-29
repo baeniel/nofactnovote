@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: no_fact_no_vote_production
+  database: no-fact-no-vote_production
   username: no_fact_no_vote
   password: <%= ENV['NO_FACT_NO_VOTE_DATABASE_PASSWORD'] %>
