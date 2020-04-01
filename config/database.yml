@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: nofactnovote_production
-  username: deploy
-  password: <%= ENV['NOFACTNOVOTE_DATABASE_PASSWORD'] %>
