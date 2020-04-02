@@ -8,17 +8,28 @@ set :deploy_to, '/home/deploy/nofactnovote'
 append :linked_files, "config/database.yml", "config/secrets.yml"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
-namespace :rake do
-  namespace :db do
-    %w[create migrate reset rollback seed setup].each do |command|
-      desc "Rake db:#{command}"
-      task command, roles: :app, except: {no_release: true} do
-        run "cd #{deploy_to}/current"
-        run "bundle exec rake db:#{ENV['task']} RAILS_ENV=#{rails_env}"
+
+task :seed do
+    on primary fetch(:migration_role) do
+      within release_path do
+        with rails_env: fetch(:rails_env)  do
+          execute :rake, 'db:seed'
+        end
       end
     end
   end
-end
+  
+# namespace :rake do
+#   namespace :db do
+#     %w[create migrate reset rollback seed setup].each do |command|
+#       desc "Rake db:#{command}"
+#       task command, roles: :app, except: {no_release: true} do
+#         run "cd #{deploy_to}/current"
+#         run "bundle exec rake db:#{ENV['task']} RAILS_ENV=#{rails_env}"
+#       end
+#     end
+#   end
+# end
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
