@@ -28,7 +28,8 @@ when "development"
 
 
 when "production"
-  AdminUser.update_attribute(password: 'sksrja11', password_confirmation: 'sksrja11')
+  AdminUser.destroy_all
+  AdminUser.create(email: "jinveloper126@gmail.com", password: 'sksrja11', password_confirmation: 'sksrja11')
 
   i = 2
   while i < 20 do
