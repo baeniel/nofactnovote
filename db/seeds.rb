@@ -10,10 +10,36 @@ xlsx = Roo::Excelx.new(Rails.root.join('public', 'no_fact_no_vote.xlsx'))
 
 case Rails.env
 when "development"
-  AdminUser.destroy_all
-  AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+  #1. 지역구 만들기
+  i = 2
+  while i < 20 do
+    District.where(name: xlsx.sheet(0).row(i)[2]).first_or_create
+    i += 1
+  end
+
+  #2. 유저 만들기
+  n = 2
+  while n < 10 do
+    User.create!(name: xlsx.sheet(0).row(n)[0], party: xlsx.sheet(0).row(n)[1], district: District.find_by(name: xlsx.sheet(0).row(n)[2]), password: xlsx.sheet(0).row(n)[3], password_confirmation: xlsx.sheet(0).row(n)[4], image: Rails.root.join("public/seoul/#{n}.gif").open)
+    n += 1
+  end
+
+  # User.create!(name: xlsx.sheet(0).row(2)[0], party: xlsx.sheet(0).row(2)[1], district: District.find_by(name: xlsx.sheet(0).row(2)[2]), password: xlsx.sheet(0).row(2)[3], password_confirmation: xlsx.sheet(0).row(2)[4])
+
+
 when "production"
-  AdminUser.destroy_all
-  AdminUser.create!(email: 'jinveloper126@gmail.com', password: 'password', password_confirmation: 'password')
-  User.create!(name: xlsx.sheet(0).row(2)[0], party: xlsx.sheet(0).row(2)[1], district: District.find_by(name: xlsx.sheet(0).row(2)[2]), password: xlsx.sheet(0).row(2)[3], password_confirmation: xlsx.sheet(0).row(2)[4]) if Rails.env.production?
+  AdminUser.update_attribute(password: 'sksrja11', password_confirmation: 'sksrja11')
+
+  i = 2
+  while i < 20 do
+    District.where(name: xlsx.sheet(0).row(i)[2]).first_or_create
+    i += 1
+  end
+
+  #2. 유저 만들기
+  n = 2
+  while n < 10 do
+    User.create!(name: xlsx.sheet(0).row(n)[0], party: xlsx.sheet(0).row(n)[1], district: District.find_by(name: xlsx.sheet(0).row(n)[2]), password: xlsx.sheet(0).row(n)[3], password_confirmation: xlsx.sheet(0).row(n)[4], image: Rails.root.join("public/seoul/#{n}.gif").open)
+    n += 1
+  end
 end
