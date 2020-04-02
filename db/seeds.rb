@@ -8,6 +8,12 @@
 require 'roo'
 xlsx = Roo::Excelx.new(Rails.root.join('public', 'no_fact_no_vote.xlsx'))
 
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
-
-User.create!(name: xlsx.sheet(0).row(2)[0], party: xlsx.sheet(0).row(2)[1], district: District.find_by(name: xlsx.sheet(0).row(2)[2]), password: xlsx.sheet(0).row(2)[3], password_confirmation: xlsx.sheet(0).row(2)[4]) if Rails.env.production?
+case Rails.env
+when "development"
+  AdminUser.destroy_all
+  AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+when "production"
+  AdminUser.destroy_all
+  AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+  # User.create!(name: xlsx.sheet(0).row(2)[0], party: xlsx.sheet(0).row(2)[1], district: District.find_by(name: xlsx.sheet(0).row(2)[2]), password: xlsx.sheet(0).row(2)[3], password_confirmation: xlsx.sheet(0).row(2)[4]) if Rails.env.production?
+end
