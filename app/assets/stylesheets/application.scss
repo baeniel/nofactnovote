@@ -15,3 +15,8 @@
  @import "bootstrap";
  @import "font-awesome-sprockets";
  @import "font-awesome";
+
+#wrapper {
+  min-height: 100%;
+  position: relative;
+}
