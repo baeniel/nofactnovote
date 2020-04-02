@@ -14,6 +14,6 @@ when "development"
   AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 when "production"
   AdminUser.destroy_all
-  AdminUser.create!(email: 'admin333@example.com', password: 'password', password_confirmation: 'password')
-  # User.create!(name: xlsx.sheet(0).row(2)[0], party: xlsx.sheet(0).row(2)[1], district: District.find_by(name: xlsx.sheet(0).row(2)[2]), password: xlsx.sheet(0).row(2)[3], password_confirmation: xlsx.sheet(0).row(2)[4]) if Rails.env.production?
+  AdminUser.create!(email: 'jinveloper126@gmail.com', password: 'password', password_confirmation: 'password')
+  User.create!(name: xlsx.sheet(0).row(2)[0], party: xlsx.sheet(0).row(2)[1], district: District.find_by(name: xlsx.sheet(0).row(2)[2]), password: xlsx.sheet(0).row(2)[3], password_confirmation: xlsx.sheet(0).row(2)[4]) if Rails.env.production?
 end
