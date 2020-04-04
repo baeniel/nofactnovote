@@ -29,9 +29,9 @@
             </div>
           <% end %>
         </div>
-        <div class="modal fade" id="exampleModalScrollable<%= user.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-          <div class="modal-dialog modal-dialog-scrollable" role="document" data-backdrop="static" data-keyboard="false">
-            <div class="modal-content text-white" id="modal-pop" data-backdrop="static" data-keyboard="false">
+        <div class="modal fade" id="exampleModalScrollable<%= user.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content text-white" id="modal-pop">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalScrollableTitle"><%= user.name %> | <%= params[:keyword] %></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -45,7 +45,7 @@
                 <p class="mt-4 mb-0">도팩첵(도덕성 팩트 체크)</p>
                 <hr class="style-one">
                 <% if user.link1.present? %>
-                  <a href="<%= user.link1 %>" class="fact_check"><%= user.link1 %></a>
+                  <a href="<%= user.link1 %>" class="fact_check" href="_blank"><%= user.link1 %></a>
                   <hr class="style-one">
                   <a href="<%= user.link2 %>" class="fact_check"><%= user.link2 %></a>
                   <% if user.link2.present? %>
