@@ -1,0 +1,5 @@
+<div class="container mt-3">
+  <% User.where("link1 is NOT NULL and link1 != ''").each do |user| %>
+    <%= user.name %>
+  <% end %>
+</div>

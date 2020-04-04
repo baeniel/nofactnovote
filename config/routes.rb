@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
   resources :destricts
+  resources :users, only: [:index, :new]
 end

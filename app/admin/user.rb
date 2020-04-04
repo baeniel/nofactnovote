@@ -14,7 +14,7 @@ ActiveAdmin.register User do
     column "district" do |d|
       d.district.name
     end
-    column :view
+    column :visit
     column :link1
     column :link2
     column :link3

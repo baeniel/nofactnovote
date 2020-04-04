@@ -1,0 +1,16 @@
+<!-- top10 -->
+<div class="container mt-5">
+  <ul class="list-unstyled">
+    <% User.order(visit: :desc).first(10).each do |user| %>
+      <li class="media mb-5">
+        <img src="<%= user.image_url %>" class="mr-3" style="width: 50%;">
+        <div class="media-body">
+          <h5 class="mt-4"><%= user.name %></h5> <br>
+          검색 수: <%= user.visit %> <br> <br>
+          <%= user.party %>
+        </div>
+      </li>
+      <hr>
+    <% end %>
+  </ul>
+</div>
