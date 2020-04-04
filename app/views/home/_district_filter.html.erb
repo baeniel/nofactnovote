@@ -70,3 +70,10 @@
     </div>
   </div>
 <% end %>
+
+<script>
+  $('#modal-pop').on('click', 'a', function(event) {
+    event.preventDefault();
+    window.open($(this).attr('href'), '_blank');
+  });
+</script>
