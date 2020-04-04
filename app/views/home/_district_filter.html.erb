@@ -2,7 +2,7 @@
   <div class="container mb-4" id="page-container">
     <div class="card-group row mt-4">
       <% district.users.each do |user| %>
-        <div class="card col-4" data-toggle="modal" data-target="#exampleModalScrollable<%= user.id %>" data-backdrop="static" data-keyboard="false">
+        <div class="card col-4" data-toggle="modal" data-target="#exampleModalScrollable<%= user.id %>">
           <img class="card-img-top pt-3" src="<%= user.image_url %>" alt="Card image cap">
           <div class="mt-3">
             <h5 class="card-title"><%= user.name %></h5>
@@ -29,7 +29,7 @@
             </div>
           <% end %>
         </div>
-        <div class="modal fade" id="exampleModalScrollable<%= user.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal fade" id="exampleModalScrollable<%= user.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
           <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content text-white" id="modal-pop">
               <div class="modal-header">
