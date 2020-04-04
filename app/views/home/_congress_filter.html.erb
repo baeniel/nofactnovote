@@ -24,43 +24,42 @@
   }
 </style>
 
-<% if district.present? %>
+<% if congress.present? %>
   <div class="container mb-4" id="page-container">
     <div class="card-group row mt-4">
-      <% district.users.each do |user| %>
-        <div class="card col-4" data-toggle="modal" data-target="#exampleModalScrollable<%= user.id %>">
-          <img class="card-img-top pt-3" src="<%= user.image_url %>" alt="Card image cap">
+      <% congress.each do |congress| %>
+        <div class="card col-4" data-toggle="modal" data-target="#exampleModalScrollable<%= congress.id %>">
+          <img class="card-img-top pt-3" src="<%= congress.image_url %>" alt="Card image cap">
           <div class="mt-3">
-            <h5 class="card-title"><%= user.name %></h5>
+            <h5 class="card-title"><%= congress.name %></h5>
           </div>
-          <% if user.party == "미래통합당" %>
+          <% if congress.party == "미래통합당" %>
             <div class="py-1 mb-3" style="background-color: #ff1493">
-              <small class="text-white"><%= user.party %></small>
+              <small class="text-white"><%= congress.party %></small>
             </div>
-          <% elsif user.party == "더불어민주당" %>
+          <% elsif congress.party == "더불어민주당" %>
             <div class="py-1 mb-3" style="background-color: #0057B7">
-              <small class="text-white"><%= user.party %></small>
+              <small class="text-white"><%= congress.party %></small>
             </div>
-          <% elsif user.party == "정의당" %>
+          <% elsif congress.party == "정의당" %>
             <div class="py-1 mb-3" style="background-color: #FFD700">
-              <small class="text-white"><%= user.party %></small>
+              <small class="text-white"><%= congress.party %></small>
             </div>
-          <% elsif user.party == "민생당" %>
+          <% elsif congress.party == "민생당" %>
             <div class="py-1 mb-3" style="background-color: #FFD700">
-              <small class="text-white"><%= user.party %></small>
+              <small class="text-white"><%= congress.party %></small>
             </div>
           <% else %>
             <div class="py-1 mb-3" style="background-color: #808080">
-              <small class="text-white"><%= user.party %></small>
+              <small class="text-white"><%= congress.party %></small>
             </div>
           <% end %>
-
         </div>
-        <div class="modal fade" id="exampleModalScrollable<%= user.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal fade" id="exampleModalScrollable<%= congress.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content text-white" id="modal-pop">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalScrollableTitle"><%= user.name %> | <%= params[:keyword] %></h5>
+                <h5 class="modal-title" id="exampleModalScrollableTitle"><%= congress.name %> | <%= params[:keyword] %></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -68,16 +67,16 @@
               <div class="modal-body text-left">
                 <p class="mb-0" style="text-left">후보자 공약</p>
                 <hr class="style-one">
-                <a href="<%= user.policy %>" class="text-success"><%= user.name %>후보자 공약집 바로가기</a>
+                <a href="<%= congress.policy %>" class="text-success"><%= congress.name %>후보자 공약집 바로가기</a>
                 <p class="mt-4 mb-0">도팩첵(도덕성 팩트 체크)</p>
                 <hr class="style-one">
-                <% if user.link1.present? %>
-                  <a href="<%= user.link1 %>"><%= user.link1 %></a>
-                  <a href="<%= user.link2 %>"><%= user.link2 %></a>
-                  <a href="<%= user.link3 %>"><%= user.link3 %></a>
-                  <a href="<%= user.link4 %>"><%= user.link4 %></a>
+                <% if congress.link1.present? %>
+                  <a href="<%= congress.link1 %>"><%= congress.link1 %></a>
+                  <a href="<%= congress.link2 %>"><%= congress.link2 %></a>
+                  <a href="<%= congress.link3 %>"><%= congress.link3 %></a>
+                  <a href="<%= congress.link4 %>"><%= congress.link4 %></a>
                 <% else %>
-                  <p>의혹을 찾지 못했습니다:)</p>
+                  <p>의혹을 추가하시려면 제보해주세요:)</p>
                 <% end %>
               </div>
             </div>

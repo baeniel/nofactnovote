@@ -7,6 +7,9 @@ class HomeController < ApplicationController
       @district = District.ransack(name_cont_any: @keyword).result(distinct: true)
       @district = District.find_by(id: @district)
 
+      @congress = User.ransack(name_cont_any: @keyword).result(distinct: true)
+      @congress = User.where(id: @congress)
+
       respond_to do |format|
         format.js
       end
