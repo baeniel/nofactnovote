@@ -21,7 +21,9 @@ require("channels")
 //= require bootstrap-sprockets
 //= require jquery_ujs
 
-$('#modal-pop').on('click', 'a', function(event) {
-  event.preventDefault();
-  window.open($(this).attr('href'), '_blank');
-});
+$(document).ready(function () {
+  $('#modal-pop').on('click', 'a', function(event) {
+    event.preventDefault();
+    window.open($(this).attr('href'), '_blank');
+  });
+}
