@@ -82,11 +82,9 @@
       dataType: "script",
       data : { user_id: user_id }
     });
+  });
+  $('#modal-pop').on('click', 'a', function(event) {
     event.preventDefault();
     window.open($(this).attr('href'), '_blank');
   });
-  // $('#modal-pop').on('click', 'a', function(event) {
-  //   event.preventDefault();
-  //   window.open($(this).attr('href'), '_blank');
-  // });
 </script>
