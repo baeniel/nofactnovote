@@ -22,8 +22,11 @@ require("channels")
 //= require jquery_ujs
 
 $(document).ready(function(){
-  $(".modal fade").modal({
-      backdrop: 'static',
-      keyboard: false
-  });
+  $(".popup").click(function(){
+    $(".modal fade").modal({
+        backdrop: 'static',
+        keyboard: false
+    });
+  })
+
 });
