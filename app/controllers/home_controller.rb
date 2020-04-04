@@ -15,9 +15,9 @@ class HomeController < ApplicationController
       end
     end
 
-    # if params[:user_id].present?
-    #   @user = User.find(params[:user_id])
-    #   @user.increment!(:view)
-    # end
+    if params[:user_id].present?
+      @user = User.find(params[:user_id])
+      @user.increment!(:view)
+    end
   end
 end
