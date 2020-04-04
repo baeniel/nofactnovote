@@ -20,13 +20,3 @@ require("channels")
 //= require popper
 //= require bootstrap-sprockets
 //= require jquery_ujs
-
-$(document).ready(function(){
-  $(".popup").click(function(){
-    $(".modal fade").modal({
-        backdrop: 'static',
-        keyboard: false
-    });
-  })
-
-});
