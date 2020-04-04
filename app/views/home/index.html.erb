@@ -36,7 +36,7 @@
     <%= render 'home/district_filter', district: @district %>
     <%= render 'home/congress_filter', congress: @congress %>
   </div>
-  <% User.order(view: :desc).first(10).each do |user| %>
+  <% User.order(visit: :desc).first(10).each do |user| %>
     <%= user.name %>
   <% end %>
 </div>
