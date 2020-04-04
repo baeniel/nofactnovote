@@ -20,3 +20,30 @@
   min-height: 100%;
   position: relative;
 }
+
+.vote-color {
+  width: 25%; background-color: #0057B7
+}
+.style-one {
+  margin-top: 0.15rem;
+  margin-bottom: 0.6rem;
+  background-color: white;
+  border: 1px solid;
+}
+.small-title {
+  magin-bottom: 0;
+}
+.card-group {
+  border-radius: 20px;
+}
+#modal-pop {
+  background-color: #696969;
+  opacity: 0.85;
+  border-radius: 25px;
+}
+.modal-content {
+  width: 80%;
+}
+.fact_check {
+  color: yellow;
+}

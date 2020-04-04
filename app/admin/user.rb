@@ -14,6 +14,9 @@ ActiveAdmin.register User do
     column "district" do |d|
       d.district.name
     end
+    column :link1
+    column :link2
+    column :link3
     actions
   end
 

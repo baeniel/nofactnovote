@@ -1,29 +1,3 @@
-<style>
-  .vote-color {
-    width: 25%; background-color: #0057B7
-  }
-  .style-one {
-    margin-top: 0.15rem;
-    margin-bottom: 0.6rem;
-    background-color: white;
-    border: 1px solid;
-  }
-  .small-title {
-    magin-bottom: 0;
-  }
-  .card-group {
-    border-radius: 20px;
-  }
-  #modal-pop {
-    background-color: #696969;
-    opacity: 0.85;
-    border-radius: 25px;
-  }
-  .modal-content {
-    width: 80%;
-  }
-</style>
-
 <% if congress.present? %>
   <div class="container mb-4" id="page-container">
     <div class="card-group row mt-4">
@@ -71,10 +45,20 @@
                 <p class="mt-4 mb-0">도팩첵(도덕성 팩트 체크)</p>
                 <hr class="style-one">
                 <% if congress.link1.present? %>
-                  <a href="<%= congress.link1 %>"><%= congress.link1 %></a>
-                  <a href="<%= congress.link2 %>"><%= congress.link2 %></a>
-                  <a href="<%= congress.link3 %>"><%= congress.link3 %></a>
-                  <a href="<%= congress.link4 %>"><%= congress.link4 %></a>
+                  <a href="<%= congress.link1 %>" class="fact_check"><%= congress.link1 %></a>
+                  <hr class="style-one">
+                  <a href="<%= congress.link2 %>" class="fact_check"><%= congress.link2 %></a>
+                  <% if congress.link2.present? %>
+                    <hr class="style-one">
+                  <% end %>
+                  <a href="<%= congress.link3 %>" class="fact_check"><%= congress.link3 %></a>
+                  <% if congress.link3.present? %>
+                    <hr class="style-one">
+                  <% end %>
+                  <a href="<%= congress.link4 %>" class="fact_check"><%= congress.link4 %></a>
+                  <% if congress.link4.present? %>
+                    <hr class="style-one">
+                  <% end %>
                 <% else %>
                   <p>의혹을 추가하시려면 제보해주세요:)</p>
                 <% end %>
