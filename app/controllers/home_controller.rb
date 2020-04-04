@@ -17,7 +17,7 @@ class HomeController < ApplicationController
 
     if params[:user_id].present?
       @user = User.find(params[:user_id])
-      @user.increment!(:view)
+      @user.increment!(:visit)
     end
   end
 end
