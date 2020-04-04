@@ -1,9 +1,17 @@
 
-<% if @district.present? %>
-  $('#filter').html('<%= j(render('home/district_filter', district: @district)) %>');
-<% elsif @congress.present? %>
-  $('#filter').html('<%= j(render('home/congress_filter', congress: @congress)) %>');
+<% if @user.present? %>
+  <% if @district.present? %>
+    $('#filter').html('<%= j(render('home/district_filter', district: @district)) %>');
+  <% elsif @congress.present? %>
+    $('#filter').html('<%= j(render('home/congress_filter', congress: @congress)) %>');
+  <% end %>
 <% else %>
-  alert("지역구나 국회의원 후보자 이름을 다시 정확하게 기입해주세요:)");
-  location.href='http://localhost:3000/'
+  <% if @district.present? %>
+    $('#filter').html('<%= j(render('home/district_filter', district: @district)) %>');
+  <% elsif @congress.present? %>
+    $('#filter').html('<%= j(render('home/congress_filter', congress: @congress)) %>');
+  <% else %>
+    alert("지역구나 국회의원 후보자 이름을 다시 정확하게 기입해주세요:)");
+    location.href='http://localhost:3000/'
+  <% end %>
 <% end %>

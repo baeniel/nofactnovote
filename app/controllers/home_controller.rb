@@ -14,5 +14,13 @@ class HomeController < ApplicationController
         format.js
       end
     end
+
+    if params[:user_id].present?
+      @user = User.find(params[:user_id])
+      @user.visits.create
+    end
+
   end
+
+
 end
