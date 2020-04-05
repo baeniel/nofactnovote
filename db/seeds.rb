@@ -25,7 +25,7 @@ when "development"
   end
 
 when "production"
-  1. 지역구 만들기
+  # 1. 지역구 만들기
   i = 2
   while i < 126 do
     District.where(name: xlsx.sheet(9).row(i)[2]).first_or_create
