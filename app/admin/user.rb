@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
 
-  permit_params :password, :password_confirmation, :party, :name, :district_id, :image, :policy, :link1, :link2, :link3, :lin4, :head1, :head2, :head3, :head4
+  permit_params :password, :password_confirmation, :party, :name, :district_id, :image, :policy, :link1, :link2, :link3, :lin4, :head1, :head2, :head3, :head4, :small_district
 
   index do
     selectable_column
@@ -45,6 +45,7 @@ ActiveAdmin.register User do
       f.input :head2
       f.input :head3
       f.input :head4
+      f.input :small_district
     end
     f.actions
   end
