@@ -1,5 +1,27 @@
 <div class="container mt-3">
-  <% User.where("link1 is NOT NULL and link1 != ''").each do |user| %>
-    <%= user.name %>
-  <% end %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">이름</th>
+        <th scope="col">소속당</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+
+        <tr data-link="<%= user_path(user) %>">
+          <th scope="row"><%= user.name %></th>
+          <td><%= user.party %></td>
+        </tr>
+
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @users %>
 </div>
+
+<script>
+  $("tr[data-link]").click(function() {
+    window.location = $(this).data("link")
+  })
+</script>
