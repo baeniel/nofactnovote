@@ -17,7 +17,7 @@
       <% end %>
     </tbody>
   </table>
-  <%= paginate @users %>
+  <%= paginate @users, outer_window: 2 %>
 </div>
 
 <script>

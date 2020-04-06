@@ -4,7 +4,7 @@
   <div class="card">
     <img src="<%= @user.image_url %>" class="card-img-top">
     <div class="card-body">
-      <h5 class="card-title"><%= @user.name %></h5>
+      <h5 class="card-title"><%= @user.name %>(<%= @user.party %>)</h5>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item"><a style="color: red;" href="<%= @user.link1 %>"><%= @user.head1 %></a></li>
