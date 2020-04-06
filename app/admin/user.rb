@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
 
-  permit_params :password, :password_confirmation, :party, :name, :district_id, :image, :policy, :link1, :link2, :link3, :lin4, :head1, :head2, :head3, :head4, :small_district
+  permit_params :password, :password_confirmation, :party, :name, :district_id, :image, :policy, :link1, :link2, :link3, :link4, :head1, :head2, :head3, :head4, :small_district
 
   index do
     selectable_column
