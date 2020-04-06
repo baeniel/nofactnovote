@@ -14,12 +14,10 @@ class HomeController < ApplicationController
         format.js
       end
     end
-
-    if params[:user_id].present?
-      @user = User.find(params[:user_id])
-      @user.increment!(:visit, by=1)
-
-
-    end
+    # 
+    # if params[:user_id].present?
+    #   @user = User.find(params[:user_id])
+    #   @user.increment!(:visit, by=1)
+    # end
   end
 end
