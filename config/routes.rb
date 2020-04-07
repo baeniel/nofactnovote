@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :destricts
   resources :users, only: [:index, :new, :show]
+  resources :contacts, only: [:new, :create]
 end

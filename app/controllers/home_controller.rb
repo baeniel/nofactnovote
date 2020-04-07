@@ -1,7 +1,8 @@
+require 'rubygems'
+require 'rest_client'
+require 'cgi'
+
 class HomeController < ApplicationController
-  # require 'rubygems'
-  # require 'rest_client'
-  # require 'cgi'
 
   def index
     if params[:keyword].present?
