@@ -4,6 +4,6 @@
   $('#filter').html('<%= j(render('home/congress_filter', congress: @congress)) %>');
 <% else %>
   alert("지역구나 국회의원 후보자 이름을 다시 정확하게 기입해주세요:)");
-  // location.href='http://no-fact-no-vote.com/'
-  location.href='http://localhost:3000/'
+  location.href='http://no-fact-no-vote.com/'
+  // location.href='http://localhost:3000/'
 <% end %>
