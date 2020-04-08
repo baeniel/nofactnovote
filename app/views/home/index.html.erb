@@ -31,10 +31,9 @@
   <h5>Do not vote without fact</h5>
   <h6 class="mb-4", style="color: #0057B7">무턱대고 뽑기 전에 잠깐, 점검하고 가세요.</h6>
   <p style="color: #0057B7">지금까지 방문한 유권자 수: <%= number_with_delimiter(Ahoy::Visit.count) %>명</p>
-  <h6 class="text-muted mt-4">*큰 지역구의 경우 '갑, 을, 병'까지 꼭 입력해주세요!</h6>
-  <h6 class="text-muted">*UI와 가독성을 고려해 모든 후보자를 담진 못했습니다.</h6>
+  <h6 class="text-muted mt-4">*UI와 가독성을 고려해 모든 후보자를 담진 못했습니다.</h6>
 
-  <span class="link mt-4 ml-2"><a id="vote-search" style="color: #0057B7" href="http://info.nec.go.kr/bizcommon/popup/popup_search_sg_emd.xhtml?electionId=0020200415">※ 내 지역구 확인!</a></span>
+  <span class="link mt-4 ml-2"><a id="vote-search" style="color: #0057B7" href="http://info.nec.go.kr/bizcommon/popup/popup_search_sg_emd.xhtml?electionId=0020200415">※ 내 지역구를 확인하려면 클릭!</a></span>
   <%= form_tag(root_path, method: :get, remote: true, class: "mt-5") do %>
     <div class="form-group has-search">
       <span class="fa fa-search form-control-feedback mt-2"></span>
