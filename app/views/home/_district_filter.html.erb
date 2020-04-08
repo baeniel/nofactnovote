@@ -1,5 +1,8 @@
 <% if district.present? %>
   <div class="container mb-4" id="page-container">
+    <% @sgg_ref&.each do |sgg| %>
+      <%= sgg %>
+    <% end %>
     <div class="card-group row mt-4">
       <% district.users.each do |user| %>
         <div class="card col-4 jinbae" data-toggle="modal" data-target="#exampleModalScrollable<%= user.id %>" data-user="<%= user.id %>">
