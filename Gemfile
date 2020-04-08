@@ -35,9 +35,14 @@ gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 gem 'httparty'
 gem "roo", "~> 2.8.0"
 gem 'ahoy_matey'
-gem 'rest-client'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
+
+
+
+gem 'rest-client'
+gem 'cgi'
+gem 'nokogiri'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

@@ -1,18 +1,28 @@
+<style>
+  #user-profile {
+    width: 25%;
+  }
+  @media (min-width: 320px) and (max-width: 480px) {
+    #user-profile {
+      width: 50%;
+    }
+  }
+
+</style>
+
 <div class="container">
   <%= link_to "돌아가기", :back, class: "btn btn-primary mt-3" %> <br> <br>
-
-  <div class="card">
-    <img src="<%= @user.image_url %>" class="card-img-top">
-    <div class="card-body">
-      <h5 class="card-title"><%= @user.name %>(<%= @user.party %>)</h5>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"><a style="color: red;" href="<%= @user.link1 %>"><%= @user.head1 %></a></li>
-      <li class="list-group-item"><a style="color: red;" href="<%= @user.link2 %>"><%= @user.head2 %></a></li>
-      <li class="list-group-item"><a style="color: red;" href="<%= @user.link3 %>"><%= @user.head3 %></a></li>
-      <li class="list-group-item"><a style="color: red;" href="<%= @user.link4 %>"><%= @user.head4 %></a></li>
-    </ul>
+  <img src="<%= @user.image_url %>" id="user-profile">
+  <div class="card-body">
+    <h5 class="card-title"><%= @user.name %>(<%= @user.party %>)</h5>
   </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><a style="color: red;" href="<%= @user.link1 %>"><%= @user.head1 %></a></li>
+    <li class="list-group-item"><a style="color: red;" href="<%= @user.link2 %>"><%= @user.head2 %></a></li>
+    <li class="list-group-item"><a style="color: red;" href="<%= @user.link3 %>"><%= @user.head3 %></a></li>
+    <li class="list-group-item"><a style="color: red;" href="<%= @user.link4 %>"><%= @user.head4 %></a></li>
+  </ul>
+
 </div>
 
 <script>
