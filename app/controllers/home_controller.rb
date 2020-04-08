@@ -24,9 +24,9 @@ class HomeController < ApplicationController
     response = RestClient::Request.execute :method => 'GET', :url => url , :headers => headers
     puts response
 
-    # if params[:user_id].present?
-    #   @user = User.find(params[:user_id])
-    #   @user.increment!(:visit, by=1)
-    # end
+    if params[:user_id].present?
+      @user = User.find(params[:user_id])
+      @user.increment!(:visit, by=1)
+    end
   end
 end

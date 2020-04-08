@@ -1,7 +1,7 @@
 class ContactMailer < ApplicationMailer
   def contact_me(contact)
     @body = contact.body
-    @title = contact.title
+    @email = contact.email
     @congress_name = contact.congress_name
     @congress_party = contact.congress_party
 

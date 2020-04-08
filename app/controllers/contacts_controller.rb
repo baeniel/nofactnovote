@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new
-    @contact.title = params[:contact][:title]
+    @contact.email = params[:contact][:email]
     @contact.congress_name = params[:contact][:congress_name]
     @contact.congress_party = params[:contact][:congress_party]
     @contact.body = params[:contact][:body]
