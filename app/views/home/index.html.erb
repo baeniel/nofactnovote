@@ -32,6 +32,8 @@
   <h6 class="mb-4", style="color: #0057B7">무턱대고 뽑기 전에 잠깐, 점검하고 가세요.</h6>
   <p style="color: #0057B7">지금까지 방문한 유권자 수: <%= number_with_delimiter(Ahoy::Visit.count) %>명</p>
   <h6 class="text-muted mt-4">*UI와 가독성을 고려해 모든 후보자를 담진 못했습니다.</h6>
+  <h6 class="text-muted">*중구,서구 등의 지역구이신 경우 지역명을 붙여주세요!</h6>
+  <h6 class="text-muted">ex) 광주 서구, 부산 중구</h6>
 
   <span class="link mt-4 ml-2"><a id="vote-search" style="color: #0057B7" href="http://info.nec.go.kr/bizcommon/popup/popup_search_sg_emd.xhtml?electionId=0020200415">※ 내 지역구를 확인하려면 클릭!</a></span>
   <%= form_tag(root_path, method: :get, remote: true, class: "mt-5") do %>
