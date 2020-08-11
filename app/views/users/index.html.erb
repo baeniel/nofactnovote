@@ -8,12 +8,20 @@
     </thead>
     <tbody>
       <% @users.each do |user| %>
-
         <tr data-link="<%= user_path(user) %>">
           <th scope="row"><%= user.name %></th>
-          <td><%= user.party %></td>
+          <% if user.party == "미래통합당" %>
+            <td style="color: red;"><%= user.party %></td>
+          <% elsif user.party == "더불어민주당" %>
+            <td style="color: #0057B7"><%= user.party %></td>
+          <% elsif user.party == "정의당" %>
+            <td style="color: #FFD700"><%= user.party %></td>
+          <% elsif user.party == "민생당" %>
+            <td style="color: #FFD700"><%= user.party %></td>
+          <% else %>
+            <td style="color: #808080"><%= user.party %></td>
+          <% end %>
         </tr>
-
       <% end %>
     </tbody>
   </table>

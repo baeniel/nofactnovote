@@ -3,8 +3,6 @@ class UsersController < ApplicationController
 
   def index
     @users = User.where("link1 is NOT NULL and link1 != ''").page(params[:page]).per(7)
-
-
   end
 
   def new
