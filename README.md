@@ -1,24 +1,25 @@
-# README
+## 노팩노보
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+2020년 4.15 총선 후보자들의 팩트체크 웹사이트. <br> <br>
 
-Things you may want to cover:
 
-* Ruby version
+### Contributor
+------------
+- 박진배 <br> <br>
 
-* System dependencies
+### 기능
+------------
+- 지역구 검색 기능
+- 개인 후보 검색 기능
+- 유사 지역구 추천 기능
+- 의혹 후보자 모아보기 기능
+- 실시간 제보 기능 <br> <br>
 
-* Configuration
+### 성과
+------------
+- 언론 노출 3회
+- 방문자수 1만회+ <br> <br>
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 기술 스택
+------------
+- Html, Css, Js, Jquery, Ruby on rails
