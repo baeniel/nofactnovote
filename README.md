@@ -2,6 +2,9 @@
 
 2020년 4.15 총선 후보자들의 팩트체크 웹사이트. <br> <br>
 
+### Press
+------------
+http://www.munhwa.com/news/view.html?no=2020040801071239345001 <br> <br>
 
 ### Contributor
 ------------
